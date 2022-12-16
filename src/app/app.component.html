@@ -11,4 +11,4 @@
 <app-nominativo [chiave]="chiave" (NominativoEvent)="mostraPalcoscenico($event)"> </app-nominativo>
 </div>
 
-<app-prenotazione [utente]="utente" [spettacolo]="spettacolo" [chiave]="chiave"></app-prenotazione>
+<app-prenotazione [utente]="utente" [spettacolo]="spettacolo" [chiave]="chiave" (PrenotazioneEvent)="clear()"></app-prenotazione>

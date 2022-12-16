@@ -9,13 +9,10 @@ export class NominativoComponent implements OnInit {
   @Input() utente: string;
   @Input() chiave: string;
   @Output() NominativoEvent = new EventEmitter<string>();
-
   constructor() { }
   inserisciNominativo(nome: string) {
     this.NominativoEvent.emit(nome);
-    console.log(nome + " viene inserito da nominativo")
   }
-
   ngOnInit() {
   }
 

@@ -53,7 +53,11 @@ export class AppComponent  {
 
   mostraPalcoscenico(nome: string){
     this.utente = nome;
-    console.log("Utente " + this.utente)
+  }
+
+  clear(){
+    this.utente = undefined;
+    this.chiave = undefined;
   }
 
 }

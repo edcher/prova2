@@ -35,9 +35,10 @@ export class PrenotazioneComponent implements OnInit {
   }
 
   restart(){
+    this.posto = undefined;
     this.utente = undefined;
     this.chiave = undefined;
-    this.posto = undefined;
+    this.PrenotazioneEvent.emit();
   }
 
   ngOnInit() {

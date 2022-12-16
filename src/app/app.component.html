@@ -1,0 +1,10 @@
+<h2> {{ title }} </h2>
+<p> Imposta la chiave </p>
+<!--Utilizza la chiave d069ff7e-->
+<input #key (keyup.enter)="cercaSpettacolo(key.value); key.value=''">
+<br><br>
+<button (click)="creaSpettacolo()">Crea</button>
+
+<app-nominativo (NominativoEvent)="mostraPalcoscenico($event)"> </app-nominativo>
+
+<app-prenotazione [utente]="utente" [platea]="platea" [palco]="palco"></app-prenotazione>

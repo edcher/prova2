@@ -4,6 +4,11 @@
 <!--Utilizza la chiave d069ff7e-->
 <input #key (keyup.enter)="cercaSpettacolo(key.value); key.value=''">
 <br><br>
+<p> Oppure crea il proprio teatro </p>
+
+<app-nuovoteatro> </app-nuovoteatro>
+
+<br><br>
 <button (click)="creaSpettacolo()">Crea</button>
 </div>
 

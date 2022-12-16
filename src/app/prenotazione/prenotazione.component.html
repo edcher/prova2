@@ -1,4 +1,3 @@
-<p> Privet {{utente}}</p>
 <div *ngIf = "utente !== undefined">
 <p> Prenotazione di {{utente}} </p>
 <h4> Platea </h4>
@@ -14,5 +13,6 @@
   </button>
 </div>
 </div>
-
-<app-conferma [zona]="zona" [posto]="posto"> </app-conferma>
+<div *ngIf = "posto !== undefined">
+  <app-conferma [utente]="utente" [zona]="zona" [posto]="posto"> </app-conferma>
+</div>

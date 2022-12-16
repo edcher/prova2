@@ -8,7 +8,7 @@ import { Component, Input, OnInit } from '@angular/core';
 export class ConfermaComponent implements OnInit {
   @Input() utente: string;
   @Input() zona: string;
-  @Input() posto: string;
+  @Input() posto: string = undefined;
 
   constructor() { }
 

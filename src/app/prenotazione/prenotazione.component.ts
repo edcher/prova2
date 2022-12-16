@@ -26,10 +26,9 @@ export class PrenotazioneComponent implements OnInit {
       this.spettacolo.palco[i][j] = this.utente;
       this.zona = "palco";
     }
-    this.posto = "P"+(i+1)+(j+1);
     this.service.setSpettacolo(this.chiave, this.spettacolo).subscribe({
       next: ( x: any ) => {
-        console.log("Successo");
+        this.posto = "P"+(i+1)+(j+1);
       },
       error: err => console.error('Observer got an error: ' + JSON.stringify(err))
     })

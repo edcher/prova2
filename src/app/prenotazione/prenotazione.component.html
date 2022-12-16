@@ -15,5 +15,5 @@
 </div>
 <div *ngIf = "posto !== undefined">
   <app-conferma [utente]="utente" [zona]="zona" [posto]="posto"> </app-conferma>
-  <button>Restart</button>
+  <button (click)="restart()">Restart</button>
 </div>

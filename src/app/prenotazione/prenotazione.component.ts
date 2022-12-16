@@ -12,7 +12,7 @@ export class PrenotazioneComponent implements OnInit {
   @Input() spettacolo: Teatro;
   @Input() chiave: string;
   @Output() PrenotazioneEvent = new EventEmitter<string>();
-  posto: string;
+  posto: string = undefined;
   zona: string;
 
   constructor(private service: TeatroService) { }
@@ -32,6 +32,12 @@ export class PrenotazioneComponent implements OnInit {
       },
       error: err => console.error('Observer got an error: ' + JSON.stringify(err))
     })
+  }
+
+  restart(){
+    this.utente = undefined;
+    this.chiave = undefined;
+    this.posto = undefined;
   }
 
   ngOnInit() {

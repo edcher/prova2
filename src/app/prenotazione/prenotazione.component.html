@@ -1,4 +1,4 @@
-<div *ngIf = "utente !== undefined">
+<div *ngIf = "(utente !== undefined) && (posto == undefined)">
 <p> Prenotazione di {{utente}} </p>
 <h4> Platea </h4>
 <div *ngFor="let fila of spettacolo.platea; let i = index">

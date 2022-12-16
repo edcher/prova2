@@ -9,25 +9,24 @@ import { Teatro } from '../app.component'
 })
 export class PrenotazioneComponent implements OnInit {
   @Input() utente: string;
-  @Input() platea: any[] = [];
-  @Input() palco: any[] = [];
   @Input() spettacolo: Teatro;
   @Input() chiave: string;
   @Output() PrenotazioneEvent = new EventEmitter<string>();
+  posto: string;
+  zona: string;
 
   constructor(private service: TeatroService) { }
 
   prenotaPosto(parte: any, i: number, j: number){
-    console.log("ciaone");
-    console.log(this.spettacolo);
-    console.log(this.spettacolo.platea);
-    if (parte == this.platea){
-      console.log("problems?")
+    if (parte == this.spettacolo.platea){
       this.spettacolo.platea[i][j] = this.utente;
+      this.zona = "platea";
     }
-    else if (parte == this.palco){
+    else if (parte == this.spettacolo.palco){
       this.spettacolo.palco[i][j] = this.utente;
+      this.zona = "palco";
     }
+    this.posto = "P"+(i+1)+(j+1);
     this.service.setSpettacolo(this.chiave, this.spettacolo).subscribe({
       next: ( x: any ) => {
         console.log("Successo");

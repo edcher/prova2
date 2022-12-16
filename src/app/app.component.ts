@@ -47,9 +47,6 @@ export class AppComponent  {
     this.service.getSpettacolo(key).subscribe({
       next: (x: any) => { 
       this.spettacolo = JSON.parse(x);
-      console.log(this.spettacolo);
-      console.log(this.spettacolo.palco);
-      console.log(this.spettacolo.platea);
       this.platea = this.spettacolo.platea;
       this.palco = this.spettacolo.palco;
       this.chiave = key;

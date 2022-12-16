@@ -1,4 +1,4 @@
-import { Component, Output, EventEmitter } from '@angular/core';
+import { Component } from '@angular/core';
 import { TeatroService } from './teatro.service';
 
 export class Teatro {
@@ -23,14 +23,17 @@ export class AppComponent  {
   utente: string = undefined;
   constructor(private service: TeatroService) { }
 
-  creaSpettacolo(){
-    const spettacolo = new Teatro(7,10,4,6);
+  creaSpettacolo(nFilePlatea, nPostiPlatea, nFilePalco, nPostiPalco){
+    console.log(nFilePlatea, nPostiPlatea, nFilePalco, nPostiPalco);
+    const spettacolo = new Teatro(nFilePlatea, nPostiPlatea, nFilePalco, nPostiPalco);
+    console.log(spettacolo);
     this.service.newSpettacolo().subscribe({
       next: ( key: any ) => {
-        this.service.setSpettacolo(key, spettacolo).subscribe({
+        this.chiave = key;
+        this.service.setSpettacolo(this.chiave, spettacolo).subscribe({
           next: ( x: any ) => {
             console.log("Lo spettacolo con la chiave "+this.chiave+" è stato creato");
-            this.cercaSpettacolo(key);
+            this.cercaSpettacolo(this.chiave);
           },
           error: err => console.error('Observer got an error: ' + JSON.stringify(err))
         })

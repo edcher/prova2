@@ -1,6 +1,6 @@
 import { Component, Output, EventEmitter, Input, OnInit } from '@angular/core';
 import { TeatroService } from '../teatro.service';
-import { Teatro } from '../app.component'
+import { Teatro } from '../app.component';
 
 @Component({
   selector: 'app-prenotazione',

@@ -20,9 +20,7 @@ export class AppComponent  {
   @Output() event = new EventEmitter<string>();
   title: string = 'Prenotazioni spettacolo';
   spettacolo: Teatro;
-  platea: any[] = [];
-  palco: any[] = [];
-  chiave: string;
+  chiave: string = undefined;
   utente: string = undefined;
   constructor(private service: TeatroService) { }
 
@@ -47,8 +45,6 @@ export class AppComponent  {
     this.service.getSpettacolo(key).subscribe({
       next: (x: any) => { 
       this.spettacolo = JSON.parse(x);
-      this.platea = this.spettacolo.platea;
-      this.palco = this.spettacolo.palco;
       this.chiave = key;
       },
       error: err => console.error('Observer got an error: ' + JSON.stringify(err))

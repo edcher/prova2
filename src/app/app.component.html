@@ -1,10 +1,14 @@
 <h2> {{ title }} </h2>
+<div *ngIf = "chiave == undefined">
 <p> Imposta la chiave </p>
 <!--Utilizza la chiave d069ff7e-->
 <input #key (keyup.enter)="cercaSpettacolo(key.value); key.value=''">
 <br><br>
 <button (click)="creaSpettacolo()">Crea</button>
+</div>
 
-<app-nominativo (NominativoEvent)="mostraPalcoscenico($event)"> </app-nominativo>
+<div *ngIf = "(chiave !== undefined)&&(utente == undefined)" >
+<app-nominativo [chiave]="chiave" (NominativoEvent)="mostraPalcoscenico($event)"> </app-nominativo>
+</div>
 
 <app-prenotazione [utente]="utente" [spettacolo]="spettacolo" [chiave]="chiave"></app-prenotazione>

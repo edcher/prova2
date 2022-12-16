@@ -17,7 +17,6 @@ export class Teatro {
 })
 
 export class AppComponent  {
-  @Output() event = new EventEmitter<string>();
   title: string = 'Prenotazioni spettacolo';
   spettacolo: Teatro;
   chiave: string = undefined;
@@ -30,7 +29,6 @@ export class AppComponent  {
       next: ( key: any ) => {
         this.service.setSpettacolo(key, spettacolo).subscribe({
           next: ( x: any ) => {
-            this.event.emit(key);
             console.log("Lo spettacolo con la chiave "+this.chiave+" è stato creato");
             this.cercaSpettacolo(key);
           },

@@ -4,7 +4,7 @@ import { TeatroService } from './teatro.service';
 export class Teatro {
   platea: any[] = [];
   palco: any[] = [];
-  constructor (nFilePlatea, nPostiPlatea, nFilePalco, nPostiPalco) {
+  constructor (nFilePlatea: number, nPostiPlatea: number, nFilePalco:number, nPostiPalco:number) {
     this.platea = new Array(nFilePlatea).fill("").map(() => Array(nPostiPlatea).fill(""));
     this.palco = new Array(nFilePalco).fill("").map(() => Array(nPostiPalco).fill(""));
   }

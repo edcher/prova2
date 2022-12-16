@@ -12,7 +12,7 @@
 <input type="number" #nfilepalco placeholder="File palco...">
 <input type="number" #npostipalco placeholder="Posti palco...">
 <br><br>
-<button (click)="creaSpettacolo(nfileplatea.value, npostiplatea.value, nfilepalco.value, npostipalco.value); nfileplatea.value=''; npostiplatea.value=''; nfilepalco.value=''; npostipalco.value='';">Crea</button>
+<button (click)="creaSpettacolo(nfileplatea.value, npostiplatea.value, nfilepalco.value, npostipalco.value)">Crea</button>
 </div>
 
 <div *ngIf = "(chiave !== undefined)&&(utente == undefined)" >

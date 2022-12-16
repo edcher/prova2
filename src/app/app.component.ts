@@ -23,7 +23,7 @@ export class AppComponent  {
   utente: string = undefined;
   constructor(private service: TeatroService) { }
 
-  creaSpettacolo(nFilePlatea, nPostiPlatea, nFilePalco, nPostiPalco){
+  creaSpettacolo(nFilePlatea: number, nPostiPlatea: number, nFilePalco:number, nPostiPalco:number){
     console.log(nFilePlatea, nPostiPlatea, nFilePalco, nPostiPalco);
     const spettacolo = new Teatro(nFilePlatea, nPostiPlatea, nFilePalco, nPostiPalco);
     console.log(spettacolo);

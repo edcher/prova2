@@ -23,9 +23,9 @@ export class AppComponent  {
   utente: string = undefined;
   constructor(private service: TeatroService) { }
 
-  creaSpettacolo(nFilePlatea: number, nPostiPlatea: number, nFilePalco:number, nPostiPalco:number){
+  creaSpettacolo(nFilePlatea: any, nPostiPlatea: any, nFilePalco:any, nPostiPalco:any){
     console.log(nFilePlatea, nPostiPlatea, nFilePalco, nPostiPalco);
-    const spettacolo = new Teatro(nFilePlatea, nPostiPlatea, nFilePalco, nPostiPalco);
+    const spettacolo = new Teatro(Number(nFilePlatea), Number(nPostiPlatea), Number(nFilePalco), Number(nPostiPalco));
     console.log(spettacolo);
     this.service.newSpettacolo().subscribe({
       next: ( key: any ) => {

@@ -15,6 +15,10 @@ input:hover {
   background-color:#F7F6F5;
 }
 
+#centrato {
+  text-align: left;
+}
+
 .bottone {
   cursor: pointer;
   font-size: 15px;

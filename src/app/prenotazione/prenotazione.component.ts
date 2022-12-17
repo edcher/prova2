@@ -26,7 +26,7 @@ export class PrenotazioneComponent implements OnInit {
         this.msg = '';
       }
       else {
-        this.msg = "Il posto " + this.spettacolo.platea[i][j] + " in platea è già occupato";
+        this.msg = "Il posto " + "P"+(i+1)+(j+1) + " in platea è già occupato";
       }
     }
     else if (parte == this.spettacolo.palco){
@@ -36,7 +36,7 @@ export class PrenotazioneComponent implements OnInit {
         this.msg = '';
       }
       else {
-        this.msg = "Il posto " + this.spettacolo.palco[i][j] + " in palco è già occupato";
+        this.msg = "Il posto " + "P"+(i+1)+(j+1) + " in palco è già occupato";
       }
     }
     if (this.msg == ''){

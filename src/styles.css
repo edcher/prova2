@@ -16,9 +16,9 @@ input:hover {
 }
 
 #centrato {
-  text-align: left;
-  margin-left: auto;
-  margin-right: auto;
+  position: absolute;
+	width: 50%;
+	left: 25%;
 }
 
 .bottone {

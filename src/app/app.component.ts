@@ -17,7 +17,7 @@ export class Teatro {
 })
 
 export class AppComponent  {
-  title: string = 'Prenotazioni spettacolo';
+  title: string = 'Servizio prenotazioni';
   spettacolo: Teatro;
   msg: string;
   chiave: string = undefined;

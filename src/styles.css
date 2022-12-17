@@ -12,6 +12,7 @@ input {
 
 input:hover {
 	cursor: text;
+  background-color:#F7F6F5;
 }
 
 .bottone {
@@ -39,7 +40,8 @@ input:hover {
 }
 
 .posto:hover {
-  background-color: #EBEBEB;
+  cursor: pointer;
+  color: #FABD5A;
 }
 
 p {

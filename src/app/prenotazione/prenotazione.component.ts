@@ -14,24 +14,39 @@ export class PrenotazioneComponent implements OnInit {
   @Output() PrenotazioneEvent = new EventEmitter<string>();
   posto: string = undefined;
   zona: string;
+  msg: string;
 
   constructor(private service: TeatroService) { }
 
   prenotaPosto(parte: any, i: number, j: number){
     if (parte == this.spettacolo.platea){
-      this.spettacolo.platea[i][j] = this.utente;
-      this.zona = "platea";
+      if (this.spettacolo.platea[i][j] == ''){
+        this.spettacolo.platea[i][j] = this.utente;
+        this.zona = "platea";
+        this.msg = '';
+      }
+      else {
+        this.msg = "Il posto " + this.spettacolo.platea[i][j] + " in platea è già occupato";
+      }
     }
     else if (parte == this.spettacolo.palco){
-      this.spettacolo.palco[i][j] = this.utente;
-      this.zona = "palco";
+      if (this.spettacolo.palco[i][j] == ''){
+        this.spettacolo.palco[i][j] = this.utente;
+        this.zona = "palco";
+        this.msg = '';
+      }
+      else {
+        this.msg = "Il posto " + this.spettacolo.palco[i][j] + " in palco è già occupato";
+      }
     }
-    this.service.setSpettacolo(this.chiave, this.spettacolo).subscribe({
-      next: ( x: any ) => {
-        this.posto = "P"+(i+1)+(j+1);
-      },
-      error: err => console.error('Observer got an error: ' + JSON.stringify(err))
-    })
+    if (this.msg == ''){
+      this.service.setSpettacolo(this.chiave, this.spettacolo).subscribe({
+        next: ( x: any ) => {
+          this.posto = "P"+(i+1)+(j+1);
+        },
+        error: err => console.error('Observer got an error: ' + JSON.stringify(err))
+      })
+    }
   }
 
   restart(){

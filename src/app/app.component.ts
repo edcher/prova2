@@ -19,6 +19,7 @@ export class Teatro {
 export class AppComponent  {
   title: string = 'Prenotazioni spettacolo';
   spettacolo: Teatro;
+  msg: string;
   chiave: string = undefined;
   utente: string = undefined;
   constructor(private service: TeatroService) { }
@@ -45,10 +46,14 @@ export class AppComponent  {
   cercaSpettacolo(key: string){
     this.service.getSpettacolo(key).subscribe({
       next: (x: any) => { 
-      this.spettacolo = JSON.parse(x);
-      this.chiave = key;
+        this.msg = '';
+        this.spettacolo = JSON.parse(x);
+        this.chiave = key;
       },
-      error: err => console.error('Observer got an error: ' + JSON.stringify(err))
+      error: err => {
+        console.error('Observer got an error: ' + JSON.stringify(err));
+        this.msg = "Errore: la chiave non esiste";
+      }
     })
   }
 

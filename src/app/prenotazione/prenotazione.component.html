@@ -9,7 +9,7 @@
 </div>
 <h4> Palco </h4>
 <div *ngFor="let fila of spettacolo.palco; let i = index">
-  <button class="posto" *ngFor="let posto of fila; let j = index" style="color:{{(spettacolo.palco[i][j] !== '') ? 'red' : 'green'}}" (click)="prenotaPosto(spettacolo.palco, i, j)">
+  <button class="posto" *ngFor="let posto of fila; let j = index" style="background-color:{{(spettacolo.palco[i][j] !== '') ? 'red' : 'green'}}" (click)="prenotaPosto(spettacolo.palco, i, j)">
    P{{i+1}}{{j+1}}
   </button>
 </div>

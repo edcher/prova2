@@ -1,23 +1,23 @@
 <h1> {{ title }} </h1>
 <div *ngIf = "chiave == undefined">
-<p> Imposta la chiave </p>
-<div [innerHtml]="msg"></div>
-<!--Utilizza la chiave d069ff7e-->
-<input #key (keyup.enter)="cercaSpettacolo(key.value); key.value=''">
-<br><br>
-<p> Oppure crea il teatro </p>
+  <p> Imposta la chiave </p>
+  <div [innerHtml]="msg"></div>
+  <!--Utilizza la chiave d069ff7e-->
+  <input #key (keyup.enter)="cercaSpettacolo(key.value); key.value=''">
+  <br><br>
+  <p> Oppure crea il teatro </p>
 
-<input type="number" #nfileplatea placeholder="File platea...">
-<input type="number" #npostiplatea placeholder="Posti platea...">
-<br>
-<input type="number" #nfilepalco placeholder="File palco...">
-<input type="number" #npostipalco placeholder="Posti palco...">
-<br><br>
-<button class="bottone" (click)="creaSpettacolo(nfileplatea.value, npostiplatea.value, nfilepalco.value, npostipalco.value)">CREA</button>
+  <input type="number" #nfileplatea placeholder="File platea...">
+  <input type="number" #npostiplatea placeholder="Posti platea...">
+  <br>
+  <input type="number" #nfilepalco placeholder="File palco...">
+  <input type="number" #npostipalco placeholder="Posti palco...">
+  <br><br>
+  <button class="bottone" (click)="creaSpettacolo(nfileplatea.value, npostiplatea.value, nfilepalco.value, npostipalco.value)">CREA</button>
 </div>
 
 <div *ngIf = "(chiave !== undefined)&&(utente == undefined)" >
-<app-nominativo [chiave]="chiave" (NominativoEvent)="mostraPalcoscenico($event)"> </app-nominativo>
+  <app-nominativo [chiave]="chiave" (NominativoEvent)="mostraPalcoscenico($event)"> </app-nominativo>
 </div>
 
 <app-prenotazione [utente]="utente" [spettacolo]="spettacolo" [chiave]="chiave" (PrenotazioneEvent)="clear()"></app-prenotazione>

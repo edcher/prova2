@@ -1,10 +1,10 @@
-<h2> {{ title }} </h2>
+<h1> {{ title }} </h1>
 <div *ngIf = "chiave == undefined">
 <p> Imposta la chiave </p>
 <!--Utilizza la chiave d069ff7e-->
 <input #key (keyup.enter)="cercaSpettacolo(key.value); key.value=''">
 <br><br>
-<p> Oppure crea il proprio teatro </p>
+<p> Oppure crea il teatro </p>
 
 <input type="number" #nfileplatea placeholder="File platea...">
 <input type="number" #npostiplatea placeholder="Posti platea...">
@@ -12,7 +12,7 @@
 <input type="number" #nfilepalco placeholder="File palco...">
 <input type="number" #npostipalco placeholder="Posti palco...">
 <br><br>
-<button (click)="creaSpettacolo(nfileplatea.value, npostiplatea.value, nfilepalco.value, npostipalco.value)">Crea</button>
+<button class="bottone" (click)="creaSpettacolo(nfileplatea.value, npostiplatea.value, nfilepalco.value, npostipalco.value)">CREA</button>
 </div>
 
 <div *ngIf = "(chiave !== undefined)&&(utente == undefined)" >

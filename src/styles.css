@@ -1,1 +1,38 @@
-/* Add application styles & imports to this file! */
+html {
+  background-color: #FCE6C2;
+}
+
+input {
+  border-radius: 5px;
+  font-size: 15px;
+  padding: 5px;
+  border-style: solid;
+  border-width: thin;
+}
+
+input:hover {
+	cursor: text;
+}
+
+.bottone {
+  cursor: pointer;
+  font-size: 15px;
+  padding: 15px 30px;
+  color: white;
+  border-radius: 30px;
+  border-width: thin;
+  background-color: #66010F;
+}
+
+.bottone:hover {
+  background-color: white;
+  color: #66010F;
+  font-weight: bold;
+  transition: 0.6s ease;
+}
+
+.posto {
+  font-weight: bold;
+  border-radius: 30px;
+  border-width: thin;
+}
